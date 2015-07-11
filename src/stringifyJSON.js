@@ -36,7 +36,8 @@ var stringifyJSON = function(obj) {
   else if (typeof obj === 'object') {
     var stringified = "{";
     for (var property in obj) {
-      stringified += "\""+property+"\":"+stringifyJSON(obj[property])+",";
+      var result = stringifyJSON(obj[property]);
+      if (result !== null) stringified += "\""+property+"\":"+stringifyJSON(obj[property])+",";
     }
     // This is an ugly hack and needs to be re-factored. Is to make comma handling easy, but this is BAD
     if (stringified.length === 1) return "{}"; // empty object
@@ -45,6 +46,7 @@ var stringifyJSON = function(obj) {
       return stringified;
     }
   }
+  // undefined, functions, symbols
   else { 
     return null;
   }
