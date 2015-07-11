@@ -3,9 +3,11 @@
 
 // but you don't so you're going to write it from scratch:
 
+// TODO: refactor/clean up 
 var stringifyJSON = function(obj) {
   // Converts a javascript obj to a JSON string
 
+  // Debug logic
   console.log(obj+", "+(typeof obj));
 
   // Base cases
