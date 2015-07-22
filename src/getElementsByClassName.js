@@ -5,10 +5,7 @@
 
 // But instead we're going to implement it from scratch:
 var getElementsByClassName = function(className, element) {
-  // Basic concept: we're going to traverse the entire document.body as if it were a tree
-  // And we're going to return up an array of all the stuff that matched
-
-  // initialize element for initial pass
+  // initialize element to document.body for initial pass
   if (element === undefined) { element = document.body; }
 
   // base case - the element has no children
